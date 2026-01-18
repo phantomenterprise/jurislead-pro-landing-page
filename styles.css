@@ -37,6 +37,21 @@ button {
   padding: 2.5rem 6vw 6rem;
 }
 
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 0%, rgba(106, 156, 255, 0.18), transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero,
+.section {
+  position: relative;
+  z-index: 1;
+}
+
 .nav {
   display: flex;
   align-items: center;
@@ -87,6 +102,11 @@ button {
   font-size: 0.8rem;
   color: var(--accent-2);
   margin-bottom: 1rem;
+}
+
+.eyebrow.subtle {
+  color: var(--muted);
+  margin-bottom: 0.4rem;
 }
 
 h1 {
@@ -143,6 +163,27 @@ h1 {
   font-size: 0.9rem;
 }
 
+.logo-row {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.logo-row span {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.logo-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+}
+
 .hero-card {
   background: var(--card);
   padding: 2.5rem;
@@ -154,6 +195,24 @@ h1 {
 .hero-card h2 {
   font-size: 1.6rem;
   margin-bottom: 0.8rem;
+}
+
+.hero-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.badge {
+  background: rgba(121, 242, 192, 0.15);
+  color: var(--accent-2);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .hero-card p {
@@ -173,6 +232,20 @@ h1 {
 .card-stats span {
   color: var(--muted);
   font-size: 0.85rem;
+}
+
+.card-list {
+  display: grid;
+  gap: 0.6rem;
+  margin-bottom: 1.6rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.note {
+  margin-top: 0.8rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .section {
@@ -211,6 +284,92 @@ h1 {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   align-items: center;
   background: #101522;
+}
+
+.process {
+  background: linear-gradient(180deg, rgba(21, 26, 40, 0.6) 0%, rgba(12, 15, 23, 0.9) 100%);
+}
+
+.process-steps {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.process-card {
+  background: rgba(21, 26, 40, 0.8);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+}
+
+.process-card span {
+  color: var(--accent-2);
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+}
+
+.process-card h3 {
+  margin: 0.8rem 0 0.6rem;
+}
+
+.process-card p {
+  color: var(--muted);
+}
+
+.testimonials {
+  background: rgba(12, 15, 23, 0.9);
+}
+
+.testimonial-grid {
+  display: grid;
+  gap: 1.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.testimonial-grid article {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  display: grid;
+  gap: 1.5rem;
+}
+
+.testimonial-grid p {
+  color: var(--muted);
+}
+
+.testimonial-grid h4 {
+  font-size: 1.1rem;
+}
+
+.testimonial-grid span {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+}
+
+.faq {
+  background: #101522;
+}
+
+.faq-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.faq-grid div {
+  background: rgba(21, 26, 40, 0.7);
+  padding: 1.8rem;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+}
+
+.faq-grid p {
+  color: var(--muted);
+  margin-top: 0.6rem;
 }
 
 .results-content p {
@@ -302,6 +461,25 @@ h1 {
   color: var(--text);
 }
 
+@media (max-width: 900px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    padding-top: 2rem;
+  }
+
+  .hero-card-header {
+    flex-direction: column;
+  }
+}
+
 .footer {
   padding: 3rem 6vw;
   display: flex;
@@ -321,19 +499,4 @@ h1 {
 .copyright {
   color: var(--muted);
   font-size: 0.85rem;
-}
-
-@media (max-width: 900px) {
-  .nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-  }
-
-  .hero {
-    padding-top: 2rem;
-  }
 }
